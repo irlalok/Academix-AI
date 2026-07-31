@@ -27,8 +27,6 @@ const teacherSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Institution",
     }
-    ref: "Institution"}
-
 },{timestamps:true});
 
 const Teachermodel = mongoose.model('Teacher', teacherSchema);
