@@ -111,7 +111,7 @@ export const uploadDpp=async(req,res)=>{
   })
   return res.status(201).json({message:"Uploaded",Dpp:Dpp})
   } catch (error) {
-    return res.status(500).json({message:error.message})
+    return res.status(500).json({message:"server error"})
   }
 }
 
@@ -123,7 +123,7 @@ export const getVideo=async(req,res)=>{
   if(videos.length===0)return res.status(404).json({message:"video Not Found"});
   return res.status(200).json({success: true, videos});
   } catch (error) {
-    return res.status(500).json({message:error.message});
+    return res.status(500).json({message:"server error"});
   }
 }
 
@@ -136,7 +136,7 @@ export const getAssignment=async(req,res)=>{
   if(assignments.length===0)return res.status(404).json({message:"assignment not found"});
   return res.status(200).json({success:true,assignments});
   } catch (error) {
-    return res.status(500).json({message:error.message});
+    return res.status(500).json({message:"server error"});
   }
 }
 
@@ -149,7 +149,7 @@ export const getDpp=async(req,res)=>{
   if(dpps.length===0)return res.status(404).json({message:"No Dpps found"});
   return res.status(200).json({success:true,dpps});
   } catch (error) {
-    return res.status(500).json({message:error.message});
+    return res.status(500).json({message:"server error"});
   }
 }
 
@@ -164,7 +164,7 @@ export const deleteVideo=async(req,res)=>{
   await videoModel.findByIdAndDelete(videoId);
    return res.status(200).json({message:"successfully deleted"});
   } catch (error) {
-    return res.status(500).json({message:error.message});
+    return res.status(500).json({message:"server error"});
   }
 }
 
@@ -179,7 +179,7 @@ export const deleteAssignment=async(req,res)=>{
   await assignmentModel.findByIdAndDelete(assignment._id);
   return res.status(200).json({message: "Assignment deleted successfully"});
   } catch (error) {
-    return res.status(500).json({message:error.message});
+    return res.status(500).json({message:"server error"});
   }
 }
 
@@ -194,6 +194,6 @@ export const deleteDpp=async(req,res)=>{
   await dppModel.findByIdAndDelete(Dpp._id);
   return res.status(200).json({message: "Dpp deleted successfully"});
   } catch (error) {
-    return res.status(500).json({message:error.message});
+    return res.status(500).json({message:"server error"});
   }
 }
