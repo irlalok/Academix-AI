@@ -7,6 +7,7 @@ import institutionRoutes from "./routes/institutionRoutes.js"
 import dotenv from "dotenv"
 import teacherRoutes from "./routes/teacherRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js"
 
 dotenv.config();
 const app = express();
@@ -27,5 +28,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/institution",institutionRoutes);
 app.use("/api/teacher", teacherRoutes);
 app.use("/api/student", studentRoutes);
+app.use("/api/upload",uploadRoutes)
 
 export default app;

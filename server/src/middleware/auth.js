@@ -72,3 +72,12 @@ export const isInstitution=async(req,res,next)=>{
     return res.status(500).json({message:"Internal server error"})
   }
 }
+
+export const isTeacher=async(req,res)=>{
+    try {
+        if(req.user.role=='Teacher')return next();
+        else  return res.status(403).json({message:"Access denied"});
+    } catch (error) {
+        return res.status(500).json({message:"Internal server error"})
+    }
+}
